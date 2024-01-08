@@ -1,2 +1,5 @@
-db_username = "admin"
-db_password = "9eXkA5g02X"
+region             = "us-east-1"
+database_name      = "MSPayment"
+database_username  = ""
+database_password  = ""
+lab_role_arn       = "arn:aws:iam::650380094581:role/LabRole"
