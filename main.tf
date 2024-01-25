@@ -10,13 +10,13 @@ provider "aws" {
   profile = "lab"
 }
 
-# terraform {
-#   backend "s3" {
-#     bucket         = "tfstate-tcfiap-payment-teste"
-#     key            = "terraform.tfstate"
-#     region         = "us-east-1"
-#   }
-# }
+terraform {
+  backend "s3" {
+    bucket         = "tfstate-tcfiap-payment"
+    key            = "terraform.tfstate"
+    region         = "us-east-1"
+  }
+}
 
 module "networking" {
   source               = "./modules/networking"
