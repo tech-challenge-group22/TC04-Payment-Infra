@@ -21,3 +21,12 @@ variable "database_password" {
 variable "lab_role_arn" {
   description = "The lab role"
 }
+
+variable "input_sqs_url" {
+}
+
+variable "sqs_message_group" {
+}
+
+variable "sqs_polling_interval" {
+}

@@ -10,17 +10,17 @@ provider "aws" {
   profile = "lab"
 }
 
-terraform {
-  backend "s3" {
-    bucket         = "tfstate-tcfiap-payment"
-    key            = "terraform.tfstate"
-    region         = "us-east-1"
-  }
-}
+# terraform {
+#   backend "s3" {
+#     bucket         = "tfstate-tcfiap-payment-teste"
+#     key            = "terraform.tfstate"
+#     region         = "us-east-1"
+#   }
+# }
 
 module "networking" {
   source               = "./modules/networking"
-  prefix          = "payment"
+  prefix               = "payment"
   vpc_cidr             = "10.0.0.0/16"
   public_subnets_cidr  = ["10.0.1.0/24", "10.0.2.0/24"]
   private_subnets_cidr = ["10.0.10.0/24", "10.0.20.0/24"]
@@ -44,6 +44,10 @@ module "rds" {
   ]
 }
 
+module sqs {
+  source = "./modules/sqs"
+}
+
 module "ecs" {
   source              = "./modules/ecs"
   prefix         = "payment"
@@ -63,6 +67,10 @@ module "ecs" {
   dbhost              = "${module.rds.rds_address}"
   execution_arn_role  = "${var.lab_role_arn}"
   rds_id              = "${module.rds.rds_id}"
+  output_sqs_url       = "${module.sqs.output_sqs_url}"
+  input_sqs_url        = "${var.input_sqs_url}"
+  sqs_message_group    = "${var.sqs_message_group}"
+  sqs_polling_interval = "${var.sqs_polling_interval}"
   depends_on = [
     module.rds,
     module.networking

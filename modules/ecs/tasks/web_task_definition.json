@@ -50,6 +50,22 @@
       {
         "name": "PORT",
         "value": "3000"
+      },
+      {
+        "name": "AWS_OUTPUT_QUEUE_URL",
+        "value": "${output_sqs_url}"
+      },
+      {
+        "name": "AWS_INPUT_QUEUE_URL",
+        "value": "${input_sqs_url}"
+      },
+      {
+        "name": "MSG_POLLING_INTERVAL",
+        "value": "${sqs_polling_interval}"
+      },
+      {
+        "name": "AWS_MESSAGE_GROUP",
+        "value": "${sqs_message_group}"
       }
     ],
     "healthCheck": {
