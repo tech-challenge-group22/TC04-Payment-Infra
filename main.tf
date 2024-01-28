@@ -71,6 +71,7 @@ module "ecs" {
   input_sqs_url        = "${var.input_sqs_url}"
   sqs_message_group    = "${var.sqs_message_group}"
   sqs_polling_interval = "${var.sqs_polling_interval}"
+  secret_key_jwt_token = "${var.secret_key_jwt_token}"
   depends_on = [
     module.rds,
     module.networking
