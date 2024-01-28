@@ -93,15 +93,3 @@ resource "aws_db_instance" "rds" {
     Environment = "${var.prefix}"
   }
 }
-
-resource "null_resource" "payment_setup_db" {
-  depends_on = [aws_db_instance.rds] #wait for the db to be ready
-  triggers = {
-    instance_id = aws_db_instance.rds.id
-  }
-
-  provisioner "local-exec" {
-      command = "mysql -u${var.database_username} -p${var.database_password} -h${aws_db_instance.rds.address} -P3306 < modules/rds/script-rds.sql"
-   }
-
-}
