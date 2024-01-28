@@ -39,6 +39,10 @@ resource "aws_ecs_task_definition" "web" {
     database_name   = "${var.database_name}"
     log_group       = "${aws_cloudwatch_log_group.payment.name}"
     aws_region = "us-east-1"
+    output_sqs_url       = "${var.output_sqs_url}"
+    input_sqs_url        = "${var.input_sqs_url}"
+    sqs_polling_interval = "${var.sqs_polling_interval}"
+    sqs_message_group    = "${var.sqs_message_group}"
   })
   requires_compatibilities = ["FARGATE"]
   network_mode             = "awsvpc"

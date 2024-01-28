@@ -55,3 +55,17 @@ variable "dbhost" {
 variable "rds_id" {
   description = "dbhost"
 }
+
+variable "output_sqs_url" {
+  description = "SQS Payment response"
+}
+
+variable input_sqs_url {
+  description = "SQS url to receive events"
+}
+
+variable sqs_polling_interval {
+}
+
+variable sqs_message_group {
+}
