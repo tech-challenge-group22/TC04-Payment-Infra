@@ -45,7 +45,7 @@
       },
       {
         "name": "SECRET_KEY_JWT_TOKEN",
-        "value": ""
+        "value": "${secret_key_jwt_token}"
       },
       {
         "name": "PORT",
