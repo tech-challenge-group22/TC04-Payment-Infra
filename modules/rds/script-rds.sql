@@ -29,8 +29,10 @@ SET character_set_results = utf8;
 SET collation_connection = utf8_general_ci;
 
 -- CADASTRANDO OS STATUS DE PAGAMENTO
-INSERT INTO status_payment_enum (status_payment) VALUES ('Aprovado');
+INSERT INTO status_payment_enum (status_payment) VALUES ('Pendente');
 INSERT INTO status_payment_enum (status_payment) VALUES ('Reprovado');
+INSERT INTO status_payment_enum (status_payment) VALUES ('Aprovado');
+
 
 -- CADASTRANDO AS FORMAS DE PAGAMENTO
 INSERT INTO payment_method_enum (payment_method) VALUES ('QrCode');
