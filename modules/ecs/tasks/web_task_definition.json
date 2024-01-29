@@ -52,12 +52,12 @@
         "value": "3000"
       },
       {
-        "name": "AWS_OUTPUT_QUEUE_URL",
-        "value": "${output_sqs_url}"
+        "name": "AWS_OUTPUT_PAYMENT_QUEUE_RECEIVED_URL",
+        "value": "${input_sqs_url}"
       },
       {
-        "name": "AWS_INPUT_QUEUE_URL",
-        "value": "${input_sqs_url}"
+        "name": "AWS_INPUT_PAYMENT_QUEUE_PROCESSED_URL",
+        "value": "${output_sqs_url}"
       },
       {
         "name": "MSG_POLLING_INTERVAL",

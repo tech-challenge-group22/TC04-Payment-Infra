@@ -4,7 +4,7 @@ Terraform para deploy da infraestrutura AWS da aplicação
 
 # Instruções 
 
-- Criar um bucket s3 com o nome tfstate-tcfiap-payment
+- Criar um bucket s3 com o nome tc04-tfstate-payment
 
 Executar 
 
